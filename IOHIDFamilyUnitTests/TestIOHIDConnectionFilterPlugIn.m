@@ -93,7 +93,7 @@ IOHIDEventBlock keyboardEventBlock = ^(void * target __unused, __unused void * r
     // Set usage for usage page you want to filter
     
     usageFilter = @[@{@kUsagePage : @(kHIDPage_KeyboardOrKeypad)},@{@kUsages : @[@(kHIDUsage_KeyboardEqualSign)]}];
-   
+    
     IOHIDEventSystemClientSetProperty(_eventSystem, CFSTR(kIOHIDServiceDeviceDebugUsageFilter), (__bridge CFTypeRef)usageFilter);
     
     
@@ -144,5 +144,6 @@ IOHIDEventBlock keyboardEventBlock = ^(void * target __unused, __unused void * r
     XCTAssert(usage == kHIDUsage_KeyboardEqualSign);
 }
 @end
+
 
 
